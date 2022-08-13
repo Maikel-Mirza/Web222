@@ -8,9 +8,9 @@
  *
  * Please update the following with your information:
  *
- *      Name:       Romarr G. Garcia
- *      Student ID: 140635202
- *      Date:       August 11,2022
+ *      Name:       Maikel Mirzadegan
+ *      Student ID: 032299158
+ *      Date:       August 14,2022
  */
  const { profile } = window;
 
@@ -155,7 +155,7 @@
  // Add action to download resume
  function addDownloadAction() {
    document.querySelector("#downloadResume").addEventListener("click", () => {
-     window.open("https://garciarg.github.io/web222-final/data/Romarr Garcia - Resume.pdf");
+     window.open("https://maikel-mirza.github.io/Web222/data/resume.pdf");
    });
  }
  
@@ -176,7 +176,7 @@
  
  // Load Academic Honesty from text file and display current date
  function loadAcadHonestyText() {
-   fetch("https://garciarg.github.io/web222-final/data/acad_policy.txt") 
+   fetch("https://maikel-mirza.github.io/Web222/data/acad_integrity.txt") 
      .then((res) => {
        return res.text();
      })
