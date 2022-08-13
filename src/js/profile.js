@@ -21,7 +21,7 @@
     courseCode: "WEB222",
     section: "NHH",
     studentId: "032299158",
-    imageUrl: "https://garciarg.github.io/web222-final/images/mypic.jpg",
+    imageUrl: "https://maikel-mirza.github.io/Web222/images/mypic.jpg",
     language: "English",
     instructor: "Professor Siyavash Ghassemi Nia",
     education: [
