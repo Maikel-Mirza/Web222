@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB222 Final Assessment</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://garciarg.github.io/web222-final/src/css/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="third-color">
+    <!-- Dynamically create the Profile summary section -->
+    <div class="basic-profile first-color">
+      <div class="profile-pic">
+        <img id="mypic" />
+        <br />
+        <span id="name"></span>
+        <br />
+        <p id="title"></p>
+        <br />
+        <div>
+          <a href="https://garciarg.github.io/web222-final/data/Romarr Garcia - Resume.pdf" download>
+              <button id="downloadResume" type="button" tabindex="1"><i class="fa-solid fa-download"></i>Resume</button>
+          </a>
+          <button id="contactMe" type="button" tabindex="2">Contact Me</button>
+        </div>
+      </div>
+      <table id="basic-info">
+        <th>Basic Information</th>
+        <tr>
+          <td id="rowlabel">EMAIL:</td>
+          <td id="email"></td>
+        </tr>
+        <tr>
+          <td id="rowlabel">LANGUAGE:</td>
+          <td id="lang"></td>
+        </tr>
+        <tr>
+          <td id="rowlabel">COURSE:</td>
+          <td id="courseCd"></td>
+        </tr>
+        <tr>
+          <td id="rowlabel">CLASS SECTION:</td>
+          <td id="sect"></td>
+        </tr>
+        <tr>
+          <td id="rowlabel">STUDENT ID:</td>
+          <td id="studId"></td>
+        </tr>
+        <tr>
+          <td id="rowlabel">INSTRUCTOR:</td>
+          <td id="instructor"></td>
+        </tr>
+      </table>
+      <div class="about-me">
+        <h1>About Me</h1>
+        <p id="aboutme"></p>
+      </div>
+    </div>
+    <hr class="divider-color" > </hr>
+    <!-- Dynamically create the Seneca Academic Honesty statement section -->
+    <div class="acad-policy first-color">
+      <h1>Academic Honesty</h1>
+      <p id="acadPolicyText"></p>
+      <p id="dateToday"></p>
+    </div>
+    <hr class="divider-color" > </hr>
+    <!-- Dynamically create the Education credentials section -->
+    <div class="educ-list first-color">
+      <h1>Education</h1>
+      <div class="creds">
+      </div>
+    </div>
+    <!-- Form section which will be displayed after clicking on Contact Me -->
+    <div class="contact-me">
+      <form id="contactForm" action="https://httpbin.org/post" method="post" class="hide-form" onsubmit="return validateForm()">
+        <label for="first-name">First name</label>
+        <input
+          id="first-name"
+          name="firstname"
+          type="text"
+          autocomplete="given-name"
+          maxlength="30"
+          tabindex="3"
+          autofocus
+        />
+        <label for="last-name">Last name</label>
+        <input
+          id="last-name"
+          name="lastname"
+          type="text"
+          autocomplete="family-name"
+          maxlength="30"
+          tabindex="4"
+        />
+        <label for="email">email</label>
+        <input
+          id="email"
+          name="email"
+          autocomplete="email"
+          type="email"
+          tabindex="5"
+        />
+        <label for="address">Address</label>
+        <input
+          id="address"
+          name="address"
+          type="text"
+          autocomplete="address"
+          maxlength="30"
+          tabindex="6"
+        />
+        <label for="city">City</label>
+        <input id="city" name="city" list="cities" tabindex="7" type="text"  placeholder="Choose your city here" autocomplete=off/>
+        <datalist id="cities">
+          <option value="Calgary"></option>
+          <option value="Edmonton"></option>
+          <option value="Halifax"></option>
+          <option value="Mississauga"></option>
+          <option value="Montreal"></option>
+          <option value="Niagara Falls"></option>
+          <option value="Ottawa"></option>
+          <option value="Toronto"></option>
+          <option value="Vancouver"></option>
+          <option value="Victoria"></option>
+        </datalist>
+        <label for="postal">Postal Code</label>
+        <input
+          id="postal"
+          name="postal"
+          type="text"
+          autocomplete="postal-code"
+          maxlength="30"
+          tabindex="8"
+        />
+        <label for="purpose" id="la">What is this for?</label><br>
+        <input type="radio" name="purpose" id="question" value="question" tabindex="9">
+        <label for="question" id="labelQuestion">Question</label>
+        <input type="radio" name="purpose" id="comment" value="comment" tabindex="10">
+        <label for="comment" id="labelComment">Comment</label>
+        <input type="radio" name="purpose" id="hiring" value="hiring" tabindex="11">
+        <label for="hiring" id="labelHiring">Hiring</label>
+        <label for="hourly-rate" class="show-if-active">Hourly Rate</label>
+
+        <input
+          id="hourly-rate"
+          name="hourlyrate"
+          class="show-if-active"
+          type="number"
+          min="0"
+          maxlength="30"
+          tabindex="12"
+        />
+        <label class="show-if-active" for="role">Role/Position</label>
+        <input
+          id="role"
+          name="role"
+          class="show-if-active"
+          type="text"
+          maxlength="30"
+          tabindex="13"
+        />
+        <textarea name="message" id="message" cols="50" rows="5" 
+        tabindex="14"
+        placeholder="Enter your message here"></textarea>
+        <p class="show-if-active" id="formErrMsg">
+        </p>
+        <div class="form-btns">
+          <input id="sendBtn" type="submit" name="submit" value="Send">
+          <input id="cancelBtn" type="reset" name="reset" value="Cancel">
+        </div>
+      </form>
+    </div>
+    <!-- JavaScript Data File -->
+    <script src="https://garciarg.github.io/web222-final/src/js/profile.js"></script>
+    <!-- Main App JavaScript File -->
+    <script src="https://garciarg.github.io/web222-final/src/js/app.js"></script>
+  </body>
+</html>
